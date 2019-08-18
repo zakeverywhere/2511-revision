@@ -105,6 +105,8 @@ therefore 'public' is the strongest modifier and 'private' is weakest access mod
 
 check:https://way2java.com/oops-concepts/rules-of-access-specifiers-in-method-overriding/
 
+choose 4
+
 ### 9
 
 assume we have an object o with class O and there is a method o.m, and we are in o.m:
@@ -145,8 +147,10 @@ because we dont do car.getDriver().getAddress(). so it is good.
 **According to the principle of least knowledge, accessing the methods on objects returned by a method call is invalid**:untrue  
 we can access, as long as we initialize a variable and assign it, like option 2.
 
-**The principle of least knowledge states that accessing methods of objects passed in as parameters or instantiated inside the method is valid**:true  
-check rule1,rule2.  
+**The principle of least knowledge states that accessing methods of objects passed in as parameters or instantiated inside the method is valid**:true
+
+check rule1,rule2.
+
 choose 3.
 
 ### 10
