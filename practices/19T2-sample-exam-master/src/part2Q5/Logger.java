@@ -5,9 +5,12 @@ package part2Q5;
  */
 public class Logger {
 	// Complete the implementation
-	
+	private static Logger myInstance = new Logger();
 	public void log(String s) {
 		//a trivial implementation of log where we pass the string to be logged to console
 		System.err.println(s);
+	}
+	public static Logger getLogger() {
+		return myInstance;
 	}
 }

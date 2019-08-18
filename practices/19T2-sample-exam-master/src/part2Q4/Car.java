@@ -1,6 +1,7 @@
 package part2Q4;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Car {
@@ -33,10 +34,10 @@ public class Car {
         cars.add(c3);
         cars.add(c4);
         cars.add(c5);
-        for (Car c : cars) {
-            System.out.println(c.getManufacturer() + "," + c.getAge());
-        }
-        // Collections.sort(cars, new CarComparator());
+//        for (Car c : cars) {
+//            System.out.println(c.getManufacturer() + "," + c.getAge());
+//        }
+        Collections.sort(cars, new CarComparator());
         for (Car c : cars) {
             System.out.println(c.getManufacturer() + "," + c.getAge());
         }

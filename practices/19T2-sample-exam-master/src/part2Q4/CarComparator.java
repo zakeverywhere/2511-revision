@@ -9,6 +9,10 @@ import java.util.Comparator;
  */
 public class CarComparator implements Comparator<Car> {
   public int compare(Car a, Car b) {
-    return a.getAge() - b.getAge();
+	if (a.getManufacturer().equals(b.getManufacturer())){
+		return a.getAge() - b.getAge();
+	}else {
+		return a.getManufacturer().compareTo(b.getManufacturer());
+	}
   }
 }
