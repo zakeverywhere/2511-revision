@@ -6,7 +6,8 @@ public class Saving extends Account{
     //but the parent constructor is over-ridden
     public Saving(double rate) {
     	//get rid of this line to see the difference
-    	super(rate); 
+    	//super(rate); 
         this.interestRate = rate;
     }
 }
+

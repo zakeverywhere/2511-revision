@@ -50,7 +50,7 @@ we can provide access to the attributes by getters (encapsulation) and make them
 **Have a constructor that enables an object to be instantiated the first time with values**:true  
 this coherent to the immutable because we can initialize values, and after that, we disable all possible change actions to make them immutable.
 
-**An object instance cannot be changed after it is created**:true
+**An object instance cannot be changed after it is created**:true  
 this is exactly the definition
 
 **Provide only setter and getter methods to access the attributes from outside the class**:untrue  
@@ -70,23 +70,23 @@ choose 1
 
 ### 7
 
-**A class can extend multiple interfaces**:true
+**A class can extend multiple interfaces**:true  
 the word extend is really odd here, it should really be implement, but because we have a definite wrong answer later we define this as true.
 
-**An interface can extend multiple interfaces**:true
+**An interface can extend multiple interfaces**:true  
 you can see the demo for this
 
-**A class can extend another class and implement multiple interfaces**:true
+**A class can extend another class and implement multiple interfaces**:true  
 as long as they dont conflict, you can extend or implement multiply classes and interfaces.
 
-**All methods in an interface are implicitly abstract, unless provided with a default implementation**:untrue
+**All methods in an interface are implicitly abstract, unless provided with a default implementation**:untrue  
 you can only provide method definition to interface
 
 choose 4
 
 ### 8
 
-**Constructors cannot be overridden**:true
+**Constructors cannot be overridden**:true  
 we have demo this in Q4, constructors can only be overloaded
 
 **If a static method in the base class, is redefined in the sub-class, the later hides the method in the base class**:true  
@@ -98,14 +98,36 @@ this is what actually dynamic data-binding is defined.
 we can assign instance into different class/interface type(as long as there is inheritate/realisation relationship), and it will call the right method at run-time.
 
 **During method overriding, the overridden method in the sub-class can specify a weaker access modifier**:untrue  
-if you can access a parent method, you should be allowed to access same child overriding method as well. That is, if a parent method is public, you can only define public in child overrided method. that is, the child can not have weaker access modifier.  
+if you can access a parent method, you should be allowed to access same child overriding method as well. That is, if a parent method is public, you can only define public in child overrided method. that is, the child can not have weaker access modifier.
+
 note: a strong access modifier means it allows more people to access.
-therefore 'public' is the strongest modifier and 'private' is weakest access modifier. access modifier != access restriction  
-check:https://way2java.com/oops-concepts/ rules-of-access-specifiers-in-method-overriding/
+therefore 'public' is the strongest modifier and 'private' is weakest access modifier. access modifier != access restriction
+
+check:https://way2java.com/oops-concepts/rules-of-access-specifiers-in-method-overriding/
 
 ### 9
 
-assume we have an object o with class O and there is a method o.m: public void m(T p){//more in o.m}, and we are in o.m
+assume we have an object o with class O and there is a method o.m, and we are in o.m:
+
+```
+class O {
+  A a;
+  public void m(T p){
+    //we are here
+    B anotherB = new B();
+    anotherB.otherMethods()//this is legal
+    a.method();//this is legal
+    p.method();//this is legal
+    print();//this is legal
+    a.b().c().d()//this is not legal
+  }
+  public void print(){
+    //a random print function
+  }
+}
+
+```
+
 The principle of least knowledge says 4 things:
 
 1. we can use the method of parameter passed in, ie. p.anything()
@@ -120,10 +142,10 @@ since we cant do chaining call,we only know the object methods we have directly 
 **The code below is a good example of the principle of least knowledge**:true  
 because we dont do car.getDriver().getAddress(). so it is good.
 
-**According to the principle of least knowledge, accessing the methods on objects returned by a method call is invalid**:untrue
-we can access, as long as we initialize a variable. like option 2.
+**According to the principle of least knowledge, accessing the methods on objects returned by a method call is invalid**:untrue  
+we can access, as long as we initialize a variable and assign it, like option 2.
 
-**The principle of least knowledge states that accessing methods of objects passed in as parameters or instantiated inside the method is valid**:true
+**The principle of least knowledge states that accessing methods of objects passed in as parameters or instantiated inside the method is valid**:true  
 check rule1,rule2.  
 choose 3.
 
