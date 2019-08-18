@@ -8,9 +8,11 @@ choose 2
 ### 2
 
 **Rectangle r = new Rectangle()**:valid  
-本身是 class， 可以 initialize  
+本身是 class， 可以 initialize
+
 **Figure f = new Rectangle()**:valid  
-所有的 Rectangle 都属于 Figure  
+所有的 Rectangle 都属于 Figure
+
 **Figure f = new 3DFigure()**:invalid  
 abstract class can not be initialized
 
@@ -20,10 +22,12 @@ choose 3
 
 **e.addEmployee()**:invalid  
 e 是 Employee, Employee 没有 addEmployee() method
-**m.addEmployee(a)**:valid
+
+**m.addEmployee(a)**:valid  
 Manager.addEmployee(Employee emp)  
-m is manager,a is employee  
-**((Director)m).approveExpense(10000)**:valid
+m is manager,a is employee
+
+**((Director)m).approveExpense(10000)**:valid  
 (Director)m casts m to Director, therefore m is Director now
 
 choose 1
@@ -38,12 +42,14 @@ choose 4
 
 ### 5
 
-immutable = do not change attributes after created.  
+immutable = do not change attributes after created.
+
 **All attributes must be private to prevent access from outside the class**: true  
 we can provide access to the attributes by getters (encapsulation) and make them private, then disable setters to make them immutable for outter classes.
 
 **Have a constructor that enables an object to be instantiated the first time with values**:true  
-this coherent to the immutable because we can initialize values, and after that, we disable all possible change actions to make them immutable.  
+this coherent to the immutable because we can initialize values, and after that, we disable all possible change actions to make them immutable.
+
 **An object instance cannot be changed after it is created**:true
 this is exactly the definition
 
