@@ -82,6 +82,8 @@ as long as they dont conflict, you can extend or implement multiply classes and 
 **All methods in an interface are implicitly abstract, unless provided with a default implementation**:untrue  
 you can only provide method definition to interface
 
+check the demo
+
 choose 4
 
 ### 8
@@ -136,7 +138,8 @@ The principle of least knowledge says 4 things:
 2. we can initialize an object within m, and call its methods.
 3. if we have attributes in o that belongs to other classes, we can use their methods. ie. if class O have attribute object a belongs to class A, we can call a.othermethods().
 4. we call call all other method in class O.
-   but, we can not do o.a().b().c().d(). because d() is nothing related to o.
+
+but, we can not do o.a().b().c().d(). because d() is nothing related to o.
 
 **The principle of least knowledge reduces dependencies between objects and promotes loose coupling**:true  
 since we cant do chaining call,we only know the object methods we have directly access with. that is we have loose coupling for all other indirect methods. o.a().b().c().d() means o knows what c return, and call d();
