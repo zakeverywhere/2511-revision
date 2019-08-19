@@ -332,7 +332,7 @@ choose 1.
 
 ### 2
 
-definition of lazy class.
+definition of lazy class.  
 choose 4.
 
 ### 3
@@ -345,13 +345,13 @@ choose 3.
 
 ### 4
 
-**The collections.sort() method is a good example of the strategy Pattern**:true
+**The collections.sort() method is a good example of the strategy Pattern**:true  
 by passing different comparator, it can sort differently. comparators are the strategyClass in this case.
 
-**The Java IO makes use of the composite pattern**:false
+**The Java IO makes use of the composite pattern**:false  
 previously mentioned there are decorator patterns. check question 5 in quiz 2.
 
-**The Java collection framework makes use of the Iterator Pattern**:true
+**The Java collection framework makes use of the Iterator Pattern**:true  
 this is a standard use of iterator pattern. i.hasNext();i.next();
 
 choose 2.
@@ -360,7 +360,7 @@ choose 2.
 
 **As the application iterates through the disparate set of items of the shopping cart, we apply the price computation logic in the class to each item type.**
 
-I am not sure about this question, but above sentence is the key to unlock the answer.
+I am not sure about this question, but above sentence is the key to unlock the answer.  
 I think it doesn't imply that we change different strategy at run-time. But strategy design pattern focus on the flexibility to change strategy at run time.  
 Meanwhile, visitor pattern sets the price calculation logic in class definition, coherent to 'in the class'.  
 Therefore I think it should be visitor pattern.
@@ -369,25 +369,33 @@ choose 4.
 
 # Part 2
 
-###Q1
-###In the class Account, the instance variables are defined to be public. State which OO principle is violated here and why it is a bad practice for instance variables to be public.
+### Q1
+
+### In the class Account, the instance variables are defined to be public. State which OO principle is violated here and why it is a bad practice for instance variables to be public.
+
 it violates the encapsulation OO principle.  
 public variables can be accessed by any other classes, which cause the classes to be coupled. At the same time, class exposes unnecessary data to other classes, and loses control of data value.
 
-###When the above code is run, the output produced is as follows: "Statement for NOVEMBER"
+### When the above code is run, the output produced is as follows: "Statement for NOVEMBER"
+
 static methods in child class does not override the parent class static method, instead, it hides from child class access. In this case, if we access through parent class, we can still access the original static class definition. a1 is defined with Account, therefore a1.printStatementHeader() = Account.printStatementHeader().
 
-###Describe what changes would you make to the code above to ensure that the classes Account and SavingsAccount are immutable?
+### Describe what changes would you make to the code above to ensure that the classes Account and SavingsAccount are immutable?
+
 I will make the variables private and final, and provide getters to access them without setters to ensure no ways to modify them. static variables does not need a getter.
 
-###Q2
-###(A) The Collections.sort() method takes in a Comparator object to specify how elements should be compared. By varying the comparator, you can sort by different criteria. Name the design pattern used in the implementation of the Comparator.
+### Q2
+
+### (A) The Collections.sort() method takes in a Comparator object to specify how elements should be compared. By varying the comparator, you can sort by different criteria. Name the design pattern used in the implementation of the Comparator.
+
 strategy pattern. we provide different strategy in run-time as per discussed before.
 
-###(B) Adding operations to classes without changing the class.
+### (B) Adding operations to classes without changing the class.
+
 visitor pattern. As per discuss in quiz2 Q3, if no run-time is mentioned, we say visitor pattern.
 
-###(C) Restricting the instantiation of a class to a single instance.
+### (C) Restricting the instantiation of a class to a single instance.
+
 singleton pattern.
 
 ###Q3Q4
