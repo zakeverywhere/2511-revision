@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="designPatternSampleCode"/>
-	<classpathentry kind="src" path="practices/19T2-sample-exam-master/src"/>
-	<classpathentry kind="src" path="answer-demo"/>
-	<classpathentry kind="output" path="practices/19T2-sample-exam-master/bin"/>
-</classpath>
