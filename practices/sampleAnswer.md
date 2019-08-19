@@ -398,11 +398,13 @@ visitor pattern. As per discuss in quiz2 Q3, if no run-time is mentioned, we say
 
 singleton pattern.
 
-###Q3Q4
+### Q3Q4
+
 refer to demos
 
-###Q5
-###Provide one important difference between the access modifiers private and protected.
+### Q5
+
+### Provide one important difference between the access modifiers private and protected.
 
 1. same package access:
    under same package, we can access other class with protected, but not with private
