@@ -1,9 +1,15 @@
+# Part 1
+
 ## QUIZ 1
 
 ### 1
 
-`e.changename(e,"Bob") System.out.println(e.getName())`  
-从这里可以看出，e.getName() = Bob
+```
+  e.changename(e,"Bob")
+  System.out.println(e.getName())
+```
+
+从这里可以看出，e.getName() = "Bob"
 
 choose 2
 
@@ -16,7 +22,7 @@ choose 2
 所有的 Rectangle 都属于 Figure
 
 **Figure f = new 3DFigure()**:invalid  
-abstract class can not be initialized
+abstract class can not be initialized.
 
 choose 3
 
@@ -292,3 +298,105 @@ the observer can modify its own methods without affecting subjects. and vise-ver
 By inheritance, we can split one class/abstract class/interface into multiple classes. Then factory method is used to create different type of these sub-class(by passing different argument).
 
 choose 1.
+
+## QUIZ 3
+
+design smell:the class abstraction design is inappropriate, in the project sense.  
+code smell: code level inappropriate, program will function but needs refactoring.
+
+- Bloaters:Long Method, Large Class, Long Parameter List, Data Clumps (variable chunk)
+- OO Abusers: against our design principles, long switch statements
+  - refused bequest: A subclass uses only some of the methods and properties inherited from its parents
+- Change Preventers:
+  - Divergent change:One class is changed in different ways for different reasons; class changes too often with new features.
+  - Shot Gun Surgery:A small change in the code forces lots of little changes to different classes
+- Dispensables:
+  - data class: Classes that just have attributes with setters and getters and no behaviour
+  - Lazy Class: a class does not enough work.
+- Couplers:
+  - feature envy: A method that is more interested in a class other than the one it actually is
+  - inappropriate intimacy: uses a class extensively when it shouldn't.
+
+### 1
+
+**Classes that not only passively store data, but also methods to operate on the data**: not smell  
+this is a classical class definition
+
+**Large conditional logic blocks**: smells
+long code is a good indication of code smell, should split the tasks and assign them into appropriate class.
+
+**Methods making extensive use of another class**: smells
+inappropriate intimacy/feature envy
+
+choose 1.
+
+### 2
+
+definition of lazy class.
+choose 4.
+
+### 3
+
+duplicated code means a chuck of code is duplicated. data clumps focuses on variable use.
+
+definition of data clumps
+
+choose 3.
+
+### 4
+
+**The collections.sort() method is a good example of the strategy Pattern**:true
+by passing different comparator, it can sort differently. comparators are the strategyClass in this case.
+
+**The Java IO makes use of the composite pattern**:false
+previously mentioned there are decorator patterns. check question 5 in quiz 2.
+
+**The Java collection framework makes use of the Iterator Pattern**:true
+this is a standard use of iterator pattern. i.hasNext();i.next();
+
+choose 2.
+
+### 5
+
+**As the application iterates through the disparate set of items of the shopping cart, we apply the price computation logic in the class to each item type.**
+
+I am not sure about this question, but above sentence is the key to unlock the answer.
+I think it doesn't imply that we change different strategy at run-time. But strategy design pattern focus on the flexibility to change strategy at run time.  
+Meanwhile, visitor pattern sets the price calculation logic in class definition, coherent to 'in the class'.  
+Therefore I think it should be visitor pattern.
+
+choose 4.
+
+# Part 2
+
+###Q1
+###In the class Account, the instance variables are defined to be public. State which OO principle is violated here and why it is a bad practice for instance variables to be public.
+it violates the encapsulation OO principle.  
+public variables can be accessed by any other classes, which cause the classes to be coupled. At the same time, class exposes unnecessary data to other classes, and loses control of data value.
+
+###When the above code is run, the output produced is as follows: "Statement for NOVEMBER"
+static methods in child class does not override the parent class static method, instead, it hides from child class access. In this case, if we access through parent class, we can still access the original static class definition. a1 is defined with Account, therefore a1.printStatementHeader() = Account.printStatementHeader().
+
+###Describe what changes would you make to the code above to ensure that the classes Account and SavingsAccount are immutable?
+I will make the variables private and final, and provide getters to access them without setters to ensure no ways to modify them. static variables does not need a getter.
+
+###Q2
+###(A) The Collections.sort() method takes in a Comparator object to specify how elements should be compared. By varying the comparator, you can sort by different criteria. Name the design pattern used in the implementation of the Comparator.
+strategy pattern. we provide different strategy in run-time as per discussed before.
+
+###(B) Adding operations to classes without changing the class.
+visitor pattern. As per discuss in quiz2 Q3, if no run-time is mentioned, we say visitor pattern.
+
+###(C) Restricting the instantiation of a class to a single instance.
+singleton pattern.
+
+###Q3Q4
+refer to demos
+
+###Q5
+###Provide one important difference between the access modifiers private and protected.
+
+1. same package access:
+   under same package, we can access other class with protected, but not with private
+2. sub class access:
+   sub class can access protected definition, but not private.
