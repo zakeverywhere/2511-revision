@@ -279,16 +279,16 @@ choose 2.
 
 ### 7
 
-**The Builder Pattern is a violation of the law of demeter**:not true
+**The Builder Pattern is a violation of the law of demeter**:not true  
 usually the law of demeter can be reinforced by breaking the function calls. So no design pattern breaks it. It is a general guide to call other methods within a class method.
 
-**Decorators provide a flexible alternative to inheritance for extending functionality.**:true
+**Decorators provide a flexible alternative to inheritance for extending functionality.**:true  
 pass old object to get a new class object with more functionality. This is not inheritance.
 
-**The observer pattern provides a design where subjects and observers are loosely coupled**:true
+**The observer pattern provides a design where subjects and observers are loosely coupled**:true  
 the observer can modify its own methods without affecting subjects. and vise-versa.
 
-**The Factory Method Design Pattern uses inheritance to solve the problem of creating objects without specifying their exact object classes**:true
+**The Factory Method Design Pattern uses inheritance to solve the problem of creating objects without specifying their exact object classes**:true  
 By inheritance, we can split one class/abstract class/interface into multiple classes. Then factory method is used to create different type of these sub-class(by passing different argument).
 
 choose 1.
