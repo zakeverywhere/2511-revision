@@ -322,10 +322,10 @@ code smell: code level inappropriate, program will function but needs refactorin
 **Classes that not only passively store data, but also methods to operate on the data**: not smell  
 this is a classical class definition
 
-**Large conditional logic blocks**: smells
+**Large conditional logic blocks**: smells  
 long code is a good indication of code smell, should split the tasks and assign them into appropriate class.
 
-**Methods making extensive use of another class**: smells
+**Methods making extensive use of another class**: smells  
 inappropriate intimacy/feature envy
 
 choose 1.
