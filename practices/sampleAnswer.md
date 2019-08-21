@@ -79,7 +79,7 @@ choose 1
 ### 7
 
 **A class can extend multiple interfaces**:true  
-the word extend is really odd here, it should really be implement, but because we have a definite wrong answer later we define this as true.
+the word extend is really odd here, it should really be implement
 
 **An interface can extend multiple interfaces**:true  
 you can see the demo for this
@@ -87,12 +87,12 @@ you can see the demo for this
 **A class can extend another class and implement multiple interfaces**:true  
 as long as they dont conflict, you can extend or implement multiply classes and interfaces.
 
-**All methods in an interface are implicitly abstract, unless provided with a default implementation**:untrue  
-you can only provide method definition to interface
+**All methods in an interface are implicitly abstract, unless provided with a default implementation**:true  
+you can provide method definition to interface, and provide implmentation in solid class.
 
 check the demo
 
-choose 4
+choose 1
 
 ### 8
 
@@ -152,17 +152,17 @@ but, we can not do o.a().b().c().d(). because d() is nothing related to o.
 **The principle of least knowledge reduces dependencies between objects and promotes loose coupling**:true  
 since we cant do chaining call,we only know the object methods we have directly access with. that is we have loose coupling for all other indirect methods. o.a().b().c().d() means o knows what c return, and call d();
 
-**The code below is a good example of the principle of least knowledge**:true  
-because we dont do car.getDriver().getAddress(). so it is good.
+**The code below is a good example of the principle of least knowledge**:untrue  
+new data type need to be initialized. if we want to call method on object, we should move it to attribute, or return it in same class method.
 
-**According to the principle of least knowledge, accessing the methods on objects returned by a method call is invalid**:untrue  
-we can access, as long as we initialize a variable and assign it, like option 2.
+**According to the principle of least knowledge, accessing the methods on objects returned by a method call is invalid**:true  
+we can only access method on object if object is in 1234 circumstances.
 
 **The principle of least knowledge states that accessing methods of objects passed in as parameters or instantiated inside the method is valid**:true
 
 check rule1,rule2.
 
-choose 3.
+choose 2.
 
 ## QUIZ 2
 
