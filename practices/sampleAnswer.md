@@ -260,7 +260,7 @@ it is similar to strategy pattern because the implementation is the same, but yo
 check if you dont understand:
 https://www.javaworld.com/article/2075706/amaze-your-developer-friends-with-design-patterns.html?page=2
 
-choose 1.
+choose 4.
 
 ### 6
 
